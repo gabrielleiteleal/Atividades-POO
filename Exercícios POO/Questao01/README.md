@@ -1,18 +1,13 @@
-## Getting Started
+## Questão 01
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+- Crie uma classe chamada Aluno com os seguintes atributos encapsulados:
+nome, matrícula, nota1 e nota2. Proteja os atributos.
 
-## Folder Structure
+- Desenvolva outra classe chamada Turma que contém um array,
+encapsulado, de objetos do tipo Aluno, representando os alunos
+matriculados em uma turma (40 no máximo). Implemente métodos para
+adicionar um aluno à turma, calcular a média das notas da turma e imprimir
+as informações de todos os alunos.
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- Na classe principal do projeto, demonstre o funcionamento das classes
+Aluno e Turma.

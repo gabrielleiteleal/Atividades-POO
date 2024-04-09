@@ -6,8 +6,13 @@ public class Tarefa {
     private int id;
 
     // Construtor
-    public Tarefa(String d) {
-        this.descrição = d;
+    public Tarefa() {
+    }
+
+    // Adicionar tarefa
+    public void novaTarefa(String desc) {
+        setDescrição(desc);
+        // setId(getId() +1);
     }
 
     // Getter & Setter

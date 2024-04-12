@@ -7,7 +7,6 @@ public class ListaDeTarefas {
 
     // Atributos
     private ArrayList<Tarefa> lista = new ArrayList<Tarefa>();
-    // private Tarefa tarefa = new Tarefa();
 
     // Construtor (vazio)
     public ListaDeTarefas() {
@@ -20,7 +19,7 @@ public class ListaDeTarefas {
 
         while (true) {
 
-            System.out.println(" [0] Adicionar tarefa | [1] Marcar como concluída | [2] Remover tarefa | [3] SAIR |");
+            System.out.println(" [0] Adicionar tarefa | [1] Marcar como concluída | [2] Remover tarefa | [3] SAIR ");
             int escolha = scan.nextInt();
             @SuppressWarnings("unused")
             final String varMorta = scan.nextLine(); // Variável morta apenas para receber o (\n) do .nextInt() acima.
@@ -46,23 +45,37 @@ public class ListaDeTarefas {
                     break;
 
                 case 1:
-                    System.out.println("CONCLUIDO");
+                    System.out.println("========== CONCLUÍDO ==========");
+                    listarTarefas();
+                    System.out.println("Qual tarefa foi concluída (ID)...");
+                    int idConcluido = scan.nextInt();
+                    for (int rp = 0; rp < lista.size(); rp++) {
+                        if (idConcluido == lista.get(rp).getId()) {
+                            lista.get(rp).setConcluida(true);
+                            System.out.println("A tarefa '" + lista.get(rp).getDescrição() + "' foi concluída");
+                        }
+                    }
+                    listarTarefas();
 
                     break;
 
                 case 2:
 
-                    System.out.println("REMOVENDO");
+                    System.out.println("========== REMOVENDO ========== ");
                     listarTarefas();
                     System.out.println("Qual tarefa deseja remover (ID)...");
                     int idRemoved = scan.nextInt();
                     for (int rp = 0; rp < lista.size(); rp++) {
                         if (idRemoved == lista.get(rp).getId()) {
+                            System.out.println(
+                                    "A tarefa '" + lista.get(rp).getDescrição() + "' foi removida com sucesso!");
                             lista.remove(rp);
-                            // System.out.println("A tarefa '" + lista.get(rp).getDescrição() + "' foi
-                            // removida com sucesso!!"); //TERMINAR
                         }
                     }
+                    for (int rp = 0; rp < lista.size(); rp++) {
+                        lista.get(rp).setId(rp);
+                    }
+
                     listarTarefas();
 
                     break;
@@ -80,19 +93,6 @@ public class ListaDeTarefas {
 
     }
 
-    /*
-     * // Método para adicionar uma nova tarefa
-     * public void adicionarTarefa(Tarefa t) {
-     * for (int rp = 0; rp < lista.size(); rp++) {
-     * t.setId(lista.get(rp).getId() + 1);
-     * }
-     * lista.add(t);
-     * System.out.println(("Foi adicionado à lista a tarefa: " + t.getDescrição()));
-     * System.out.println("Quantidade de tarefas: " + lista.size());
-     * System.out.println("");
-     * }
-     */
-
     // Método para listar todos os itens da lista
     public void listarTarefas() {
         System.out.println("|ID|");
@@ -107,29 +107,6 @@ public class ListaDeTarefas {
             }
         }
         System.out.println("");
-    }
-
-    // Método tarefa concluída
-    public void tarefaConcluida(Tarefa c) {
-        c.setConcluida(true);
-        System.out.println("A tarefa '" + c.getDescrição() + "' foi concluída!!");
-        System.out.println("");
-    }
-
-    // Método para remover tarefa (pelo ID)
-    public void removerTarefa(Tarefa r) {
-        lista.remove(r.getId());
-        System.out.println(("A tarefa '" + r.getDescrição() + "' Foi removida da lista!!"));
-        System.out.println("");
-        for (int rp = 0; rp < lista.size(); rp++) {
-            System.out.print("|" + lista.get(rp).getId());
-            System.out.print(" | " + lista.get(rp).getDescrição() + " =");
-            if (lista.get(rp).isConcluida()) {
-                System.out.println(" Concluída");
-            } else {
-                System.out.println(" Não concluída");
-            }
-        }
     }
 
 }

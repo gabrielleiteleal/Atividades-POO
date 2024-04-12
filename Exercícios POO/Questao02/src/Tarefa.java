@@ -12,7 +12,6 @@ public class Tarefa {
     // Adicionar tarefa
     public void novaTarefa(String desc) {
         setDescrição(desc);
-        // setId(getId() +1);
     }
 
     // Getter & Setter

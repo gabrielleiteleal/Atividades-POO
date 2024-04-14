@@ -45,10 +45,4 @@ public class Despesa {
         this.valor = v;
     }
 
-    /*
-     * public void setData() {
-     * 
-     * }
-     */
-
 }

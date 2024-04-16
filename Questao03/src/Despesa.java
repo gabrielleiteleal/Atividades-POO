@@ -14,26 +14,25 @@ public class Despesa {
 
     // Construtor
     public Despesa() {
-
-    }
-
-    // Adicionar despesa
-    public void novaDespesa(String desc, int val) {
-        this.descricao = desc;
-        this.valor = val;
         calendario.setTime(data);
         this.dia = calendario.get(Calendar.DAY_OF_MONTH);
         this.mes = calendario.get(Calendar.MONTH) + 1;
         this.ano = calendario.get(Calendar.YEAR);
     }
 
-    //ToString
-    public void detalhes(){
+    // Adicionar despesa
+    public void novaDespesa(String desc, int val) {
+        this.descricao = desc;
+        this.valor = val;
+    }
+
+    // ToString
+    public void detalhes() {
         System.out.println("==============================");
         System.out.println(getDescricao());
-        if(getValor() >= 0){
+        if (getValor() >= 0) {
             System.out.println("+R$ " + getValor());
-        }else{
+        } else {
             System.out.println("-R$ " + getValor());
         }
         System.out.println(this.dia + "/" + this.mes + "/" + this.ano);
@@ -61,7 +60,7 @@ public class Despesa {
         this.descricao = desc;
     }
 
-    public void setValor(int v) {
+    public void setValor(double v) {
         this.valor = v;
     }
 

@@ -4,51 +4,90 @@ import java.util.Random;
 public class Roleta {
 
     // Atributos
-    private int numGerado;
+    private int numPc;
     private int numUser;
-    private boolean vermelhoMaq;
+    private boolean vermelhoPc;
     private boolean vermelhoUser;
     private Scanner scanner = new Scanner(System.in);
     private Random gerador = new Random();
 
     // Jogar
     public void jogar() {
-        System.out.println("=============== ROLETA ===============");
-        System.out.print("Escolha [0] Vermelho ou [1] Preto: ");
-        int opcaoUser = scanner.nextInt();
 
-        if (opcaoUser == 0) {
-            setVermelhoUser(true);
-            //Utilizar um for para exibir apenas numeros vermelhos
-        } else if (opcaoUser == 1) {
-            setVermelhoUser(false);
-            //Utilizar um for para exibir apenas numeros pretos
-        } else {
-            System.out.println("Opção inválida");
-        }
+        while (true) {
 
-        
+            System.out.println("=============== ROLETA ===============");
 
-        System.out.print("Escolha um número de 1 à 36: ");
-        this.numUser = scanner.nextInt();
-        // String varMorta = scanner.nextLine();
+            while (true) {
 
-        sorteio();
-        System.out.println(this.numGerado);
-        System.out.println(this.numUser);
-        System.out.println(this.vermelhoMaq);
-        System.out.println(this.vermelhoUser);
-        if (this.numGerado == this.numUser || this.vermelhoMaq == this.vermelhoUser) {
-            System.out.println("O usuário Venceu!!");
-        } else {
-            System.out.println("A máquina Venceu, você perdeu!!");
+                System.out.print("Escolha [0] Vermelho ou [1] Preto: ");
+                int corUser = scanner.nextInt();
+
+                if (corUser == 0) {
+                    setVermelhoUser(true);
+                    System.out.println("Escolha um número ímpar entre 1 e 35");
+                    int numeroI = scanner.nextInt();
+                    String varMorta = scanner.nextLine();
+                    while (true) {
+                        if (numeroI % 2 == 1) {
+                            this.numUser = numeroI;
+                            System.out.println("Número escolhido: " + this.numUser);
+                            System.out.println("Cor escolhida: Vermelho");
+                            System.out.println("==============================");
+                            break;
+                        } else {
+                            System.out.println("Número inválido");
+                        }
+
+                    }
+                    break;
+                } else if (corUser == 1) {
+                    setVermelhoUser(false);
+                    System.out.println("Escolha um número par entre 2 e 36");
+                    int numeroP = scanner.nextInt();
+                    String varMorta = scanner.nextLine();
+                    while (true) {
+                        if (numeroP % 2 == 0) {
+                            this.numUser = numeroP;
+                            System.out.println("Número escolhido: " + this.numUser);
+                            System.out.println("Cor escolhida: Preto");
+                            System.out.println("==============================");
+                            break;
+                        }
+                        // Else
+                        System.out.println("Número inválido");
+
+                    }
+                    break;
+                }
+
+                System.out.println("Número inválido");
+
+            }
+
+            sorteio();
+
+            System.out.println("Jogada da Máquina: " + this.numPc + " " + (vermelhoPc ? "Vermelho" : "Preto"));
+            System.out.println("Jogada do Usuário: " + this.numUser + " " + (vermelhoUser ? "Vermelho" : "Preto"));
+            if (this.numUser == this.numPc || this.vermelhoPc == this.vermelhoUser) {
+                System.out.println("O usuário Venceu!!");
+            } else {
+                System.out.println("A máquina Venceu, você perdeu!!");// Adicionar mais verificação
+            }
+
+            System.out.println("Deseja jogar novamente [s/n]");
+            String escolha = scanner.nextLine();
+            if (escolha.equals("n") || escolha.equals("N")) {
+                break;
+            }
+
         }
     }
 
     // Método para sortear número e cor
     public void sorteio() {
-        this.numGerado = gerador.nextInt(37);
-        if (numGerado % 2 == 0) {
+        this.numPc = gerador.nextInt(37);
+        if (numPc % 2 == 0) {
             setVermelhoMaq(false);
         } else {
             setVermelhoMaq(true);
@@ -56,12 +95,12 @@ public class Roleta {
     }
 
     // Getter & Setter
-    public int getNumGerado() {
-        return this.numGerado;
+    public int getNumPc() {
+        return this.numPc;
     }
 
     public boolean isVermelhoMaq() {
-        return this.vermelhoMaq;
+        return this.vermelhoPc;
     }
 
     public boolean isVermelhoUser() {
@@ -69,11 +108,11 @@ public class Roleta {
     }
 
     public void setNumGerado(int n) {
-        this.numGerado = n;
+        this.numPc = n;
     }
 
     public void setVermelhoMaq(boolean vm) {
-        this.vermelhoMaq = vm;
+        this.vermelhoPc = vm;
     }
 
     public void setVermelhoUser(boolean vu) {

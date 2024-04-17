@@ -27,6 +27,7 @@ public class Roleta {
                     setVermelhoUser(true);
                     System.out.println("Escolha um número ímpar entre 1 e 35");
                     int numeroI = scanner.nextInt();
+                    @SuppressWarnings("unused")
                     String varMorta = scanner.nextLine();
                     while (true) {
                         if (numeroI % 2 == 1) {
@@ -45,6 +46,7 @@ public class Roleta {
                     setVermelhoUser(false);
                     System.out.println("Escolha um número par entre 2 e 36");
                     int numeroP = scanner.nextInt();
+                    @SuppressWarnings("unused")
                     String varMorta = scanner.nextLine();
                     while (true) {
                         if (numeroP % 2 == 0) {

@@ -11,9 +11,11 @@ public class Blackjack {
 
     // Funcionamento
     public void jogar() {
+        System.out.println("");
         System.out.println("=============== BLACKJACK ===============");
         while (true) {
             System.out.println("Puxar uma carta...");
+            @SuppressWarnings("unused")
             String comecar = scan.nextLine();
             int cartaUser = gerador.nextInt(14);
             int cartaPc = gerador.nextInt(14);

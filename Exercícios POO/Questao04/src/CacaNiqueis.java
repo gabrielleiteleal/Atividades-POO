@@ -15,6 +15,7 @@ public class CacaNiqueis {
 
     // Funcionamento
     public void jogar() {
+        System.out.println("=============== Caça níqueis ===============");
         sorteio();
     }
 

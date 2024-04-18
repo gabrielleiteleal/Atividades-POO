@@ -16,6 +16,7 @@ public class Roleta {
 
         while (true) {
 
+            System.out.println("");
             System.out.println("=============== ROLETA ===============");
 
             while (true) {

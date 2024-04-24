@@ -19,6 +19,7 @@ public class CategoriaDespesa {
         while (true) {
             System.out.println(" [0] Acidionar | [1] Remover | [2] Relatório | [3] Sair");
             int appEscolha = scan.nextInt();
+            @SuppressWarnings("unused")
             String varMorta = scan.nextLine();
 
             switch (appEscolha) {
@@ -64,6 +65,7 @@ public class CategoriaDespesa {
         System.out.println("|4| Lazer");
         System.out.println("|5| Outros");
         int categEscolha = scan.nextInt();
+        @SuppressWarnings("unused")
         String varMortaa = scan.nextLine();
         switch (categEscolha) {
             case 0:

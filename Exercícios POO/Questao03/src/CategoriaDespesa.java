@@ -14,7 +14,7 @@ public class CategoriaDespesa {
     private Scanner scan = new Scanner(System.in);
 
     // Interface
-    public void Interface() {
+    public void InterfaceDespesa() {
         System.out.println("=============== APP DESPESAS ===============");
         while (true) {
             System.out.println(" [0] Acidionar | [1] Remover | [2] Relatório | [3] Sair");

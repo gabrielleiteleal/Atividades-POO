@@ -1,4 +1,4 @@
-public class App {
+public class AppAluno {
     public static void main(String[] args) throws Exception {
 
         Aluno a1 = new Aluno("Gabriel", 123, 6, 8);

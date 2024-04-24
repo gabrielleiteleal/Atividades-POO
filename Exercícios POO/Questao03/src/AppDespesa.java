@@ -1,4 +1,4 @@
-public class App {
+public class AppDespesa {
     public static void main(String[] args) throws Exception {
 
         Despesa despesa = new Despesa();
@@ -7,7 +7,7 @@ public class App {
         // despesa.novaDespesa("Lanche", 20);
         // despesa.detalhes();
 
-        catDesp.Interface();
+        catDesp.InterfaceDespesa();
 
     }
 }

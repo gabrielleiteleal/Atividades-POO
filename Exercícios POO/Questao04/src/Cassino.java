@@ -9,7 +9,7 @@ public class Cassino {
     private Blackjack blackjack = new Blackjack();
     
     //Interface
-    public void comecar(){
+    public void comecarCassino(){
         System.out.println("=============== CASSINO ===============");
         System.out.println(" [0] Roleta | [1] Caça níqueis | [2] Blackjack");
         int comecar = scan.nextInt();

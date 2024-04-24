@@ -13,7 +13,7 @@ public class ListaDeTarefas {
     }
 
     // Interface
-    public void Interface() {
+    public void InterfaceTarefa() {
 
         System.out.println("========== Gerenciador de tarefas ==========");
 
